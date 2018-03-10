@@ -1,15 +1,15 @@
 <ul>
     <input type="text" [(ngModel)]="keyword">
     <button (click)="filter_gender('')">Todos</button>
-    <button (click)="filter_gender('F')">Filtrar a Mujeres</button>
-    <button (click)="filter_gender('M')">Filtrar a Hombres</button>
+    <button (click)="filter_gender('Female')">Filtrar a Mujeres</button>
+    <button (click)="filter_gender('Male')">Filtrar a Hombres</button>
     <div *ngFor="let employee of employees">
-        <li *ngIf="(employee.gender==filter || filter=='') && search_name(employee.name)" [ngClass]="{background_blue:employee.gender=='M',background_pink:employee.gender=='F'}">
+        <li *ngIf="(employee.gender==filter || filter=='') && search_name(employee.name)" [ngClass]="{background_blue:employee.gender=='Male',background_pink:employee.gender=='Female'}">
             <b>Nombres:</b> {{employee.name}}
             <br>
             <div [ngSwitch]="employee.gender">
-                <div *ngSwitchCase="'M'" style="float:left;height:20px;width:20px;background-color: blue"></div>
-                <div *ngSwitchCase="'F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
+                <div *ngSwitchCase="'Male'" style="float:left;height:20px;width:20px;background-color: blue"></div>
+                <div *ngSwitchCase="'Female'" style="float:left;height:20px;width:20px;background-color: pink"></div>
                 <div *ngSwitchCase="''" style="float:left;height:20px;width:20px;background-color: gray"></div>
             </div>
             <!--
