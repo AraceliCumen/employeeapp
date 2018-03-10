@@ -3,12 +3,15 @@ import {Employee} from "./employee";
 
 @Component({
    selector:"employee",
-   templateUrl:"./employee.component.html"
+   templateUrl:"./employee.component.html",
+   styleUrls:["./employee.component.css"]
 })
 export class EmployeeComponent{
     public employee:Employee
     public employees:Array<Employee>
     public filter:string=""
+    public keyword:string=""
+
     constructor(){
         this.employees=[
             new Employee(1,"Julio Cesar","juliocesar@gmail.com","11/07/1990","Lima","999999999",5000,"Soluciones Tecnológicas","","M"),
@@ -21,6 +24,9 @@ export class EmployeeComponent{
 
     filter_gender(gender){
         this.filter=gender
+    }
+    search_name(name){
+        return name.toLowerCase().indexOf(this.keyword.toLowerCase())>=0
     }
    
 }

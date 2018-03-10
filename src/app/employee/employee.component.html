@@ -1,9 +1,10 @@
 <ul>
+    <input type="text" [(ngModel)]="keyword">
     <button (click)="filter_gender('')">Todos</button>
     <button (click)="filter_gender('F')">Filtrar a Mujeres</button>
     <button (click)="filter_gender('M')">Filtrar a Hombres</button>
     <div *ngFor="let employee of employees">
-        <li *ngIf="employee.gender==filter || filter==''">
+        <li *ngIf="(employee.gender==filter || filter=='') && search_name(employee.name)" [ngClass]="{background_blue:employee.gender=='M',background_pink:employee.gender=='F'}">
             <b>Nombres:</b> {{employee.name}}
             <br>
             <div [ngSwitch]="employee.gender">
