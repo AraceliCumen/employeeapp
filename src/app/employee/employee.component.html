@@ -6,8 +6,15 @@
         <li *ngIf="employee.gender==filter || filter==''">
             <b>Nombres:</b> {{employee.name}}
             <br>
+            <div [ngSwitch]="employee.gender">
+                <div *ngSwitchCase="'M'" style="float:left;height:20px;width:20px;background-color: blue"></div>
+                <div *ngSwitchCase="'F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
+                <div *ngSwitchCase="''" style="float:left;height:20px;width:20px;background-color: gray"></div>
+            </div>
+            <!--
             <div *ngIf="employee.gender=='M'" style="float:left;height:20px;width:20px;background-color: blue"></div>
             <div *ngIf="employee.gender=='F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
+            -->
             <b>DATOS PERSONALES</b>
             <ul>
                 <li><b>Correo:</b> {{employee.email}}</li>
