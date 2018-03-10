@@ -1,17 +1,22 @@
 <ul>
-    <li *ngFor="let employee of employees">
-        <b>Nombres:</b> {{employee.name}}
-        <br>
-        <div *ngIf="employee.gender=='M'" style="float:left;height:20px;width:20px;background-color: blue"></div>
-        <div *ngIf="employee.gender=='F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
-        <b>DATOS PERSONALES</b>
-        <ul>
-            <li><b>Correo:</b> {{employee.email}}</li>
-            <li><b>Fecha de Nacimiento:</b> {{employee.birthday}}</li>
-            <li><b>Ciudad:</b> {{employee.city}}</li>
-            <li><b>Teléfono:</b> {{employee.phone}}</li>
-            <li><b>Compañía:</b> {{employee.company}}</li>
-            <li><b>Salario:</b> {{employee.salary}}</li>
-        </ul>
-    </li>
+    <button (click)="filter_gender('')">Todos</button>
+    <button (click)="filter_gender('F')">Filtrar a Mujeres</button>
+    <button (click)="filter_gender('M')">Filtrar a Hombres</button>
+    <div *ngFor="let employee of employees">
+        <li *ngIf="employee.gender==filter || filter==''">
+            <b>Nombres:</b> {{employee.name}}
+            <br>
+            <div *ngIf="employee.gender=='M'" style="float:left;height:20px;width:20px;background-color: blue"></div>
+            <div *ngIf="employee.gender=='F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
+            <b>DATOS PERSONALES</b>
+            <ul>
+                <li><b>Correo:</b> {{employee.email}}</li>
+                <li><b>Fecha de Nacimiento:</b> {{employee.birthday}}</li>
+                <li><b>Ciudad:</b> {{employee.city}}</li>
+                <li><b>Teléfono:</b> {{employee.phone}}</li>
+                <li><b>Compañía:</b> {{employee.company}}</li>
+                <li><b>Salario:</b> {{employee.salary}}</li>
+            </ul>
+        </li>
+    </div>
 </ul>

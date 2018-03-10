@@ -8,7 +8,7 @@ import {Employee} from "./employee";
 export class EmployeeComponent{
     public employee:Employee
     public employees:Array<Employee>
-
+    public filter:string=""
     constructor(){
         this.employees=[
             new Employee(1,"Julio Cesar","juliocesar@gmail.com","11/07/1990","Lima","999999999",5000,"Soluciones Tecnológicas","","M"),
@@ -18,4 +18,9 @@ export class EmployeeComponent{
             new Employee(5,"Simón Bolivar","simonvolivar@gmail.com","1/07/1999","Lima","999999999",2100,"Soluciones Tecnológicas","","M")
         ]
     }
+
+    filter_gender(gender){
+        this.filter=gender
+    }
+   
 }
