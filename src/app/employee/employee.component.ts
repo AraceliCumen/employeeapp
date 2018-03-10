@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
    selector:"employee",
-   template:"<span>{{name}}</span>"
+   templateUrl:"./employee.component.html"
 })
 export class EmployeeComponent{
     public name="Victor Daniel"
