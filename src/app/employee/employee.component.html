@@ -16,7 +16,8 @@
             <div *ngIf="employee.gender=='F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
             -->
             <b>DATOS PERSONALES</b>
-            <ul>
+            <ul [style.list-style]="'none'">
+                <!--<ul [ngStyle]="{'list-style':'none'}">-->
                 <li><b>Correo:</b> {{employee.email}}</li>
                 <li><b>Fecha de Nacimiento:</b> {{employee.birthday}}</li>
                 <li><b>Ciudad:</b> {{employee.city}}</li>
