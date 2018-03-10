@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {Employee} from "./employee";
-
+import employee_mock from "./employee.mock"
 @Component({
    selector:"employee",
    templateUrl:"./employee.component.html",
@@ -13,6 +13,7 @@ export class EmployeeComponent{
     public keyword:string=""
 
     constructor(){
+        console.log(employee_mock)
         this.employees=[
             new Employee(1,"Julio Cesar","juliocesar@gmail.com","11/07/1990","Lima","999999999",5000,"Soluciones Tecnológicas","","M"),
             new Employee(2,"Cinthya Alejandra","cinthya@gmail.com","20/08/1990","Lima","999999999",3000,"Soluciones Tecnológicas","",""),
