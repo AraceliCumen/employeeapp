@@ -2,6 +2,8 @@
     <li *ngFor="let employee of employees">
         <b>Nombres:</b> {{employee.name}}
         <br>
+        <div *ngIf="employee.gender=='M'" style="float:left;height:20px;width:20px;background-color: blue"></div>
+        <div *ngIf="employee.gender=='F'" style="float:left;height:20px;width:20px;background-color: pink"></div>
         <b>DATOS PERSONALES</b>
         <ul>
             <li><b>Correo:</b> {{employee.email}}</li>

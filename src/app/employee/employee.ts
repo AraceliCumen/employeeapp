@@ -8,6 +8,7 @@ export class Employee{
         public phone:string,
         public salary:number,
         public company:string,
-        public photoURL:string
+        public photoURL:string,
+        public gender:string
     ){}
 }
